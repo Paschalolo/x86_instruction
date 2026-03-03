@@ -1,0 +1,25 @@
+     1                                  
+     2                                  ; program showing user defined procedure call 
+     3                                  
+     4                                  ; Author : Pascahl Ahanmiso 
+     5                                  
+     6                                  SECTION .text 
+     7                                  	global _start 
+     8                                  
+     9                                  ; int myProc(int) ; functions multplies the 1st arg by two 
+    10                                  myProc : 
+    11 00000000 4883C702                	add rdi , 2 
+    12 00000004 C3                      	ret ; here sj the return call 
+    13                                  _start : 
+    14 00000005 4831C0                  	xor rax , rax
+    15 00000008 BF4E000000              	mov rdi , 78 ; moving 78 to rdi 
+    16 0000000D E8EEFFFFFF              	call myProc 
+    17 00000012 90                      	nop
+    18 00000013 90                      	nop 
+    19                                  	; note the value of rax is greater than rdi 
+    20                                  	; rax > rdi 
+    21                                  	; system terminate 
+    22 00000014 B83C000000              	mov rax , 0x3c 
+    23 00000019 BF00000000              	mov rdi , 0 
+    24 0000001E 0F05                    	syscall 
+    25                                  

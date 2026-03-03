@@ -17,9 +17,10 @@ compilecpp: compile
 link :  compile 
 	ld  src/$(MFILE) -o bin/$(FILE)
 compile: $(ASMFILE)
-	$(COMPILEASM.o) $< -o src/$(MFILE) -l src/${FILE}.lst
+	$(COMPILEASM.o) $< -o src/$(MFILE) 
 	
-
+create: 
+	touch  src/$(ASMFILE)
 clean : 
 	rm src/$(FILE) && rm src/$(MFILE)
 push : 
