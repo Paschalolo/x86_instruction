@@ -3,4 +3,28 @@
 mov destination_operand , source_operand 
 ; imm<a mukltiple of 8> -> immedaite values used with opcode instructions 
 ; reg<multiple of 8> -> registers containins 8 , 16 , 32 or 64 bits 
-; mem<multiple of 8> -> a mmemory location containing 8 , 16  , 32 or 64 bits 
+; mem<multiple of 8> -> a mmemory location containing 8 , 16  , 32 or 64 bits
+
+; A constant will the prreproccesssed into an immediate 
+; example below 
+SECTION .data
+	ToLen equ 0 
+SECTION .text 
+	...
+	mov rax , ToLen 
+	; actual compilation is mov rax , 0 
+
+; add and sub instructions 
+add destination_operand , source_operand 
+destination = destination - source 
+lea ; load effective address used for computing the address of a vairable also to perfrom aritmetic 
+lea rax , [mydata + 3]; rax has the address of mydata + 3 
+lea rax , [rax<value in rax is 67> + 3 ]; rax has the valeyh of 70 
+
+; call and ret 
+call kopLoop ; used to make a procedure call it pushed the return address to the stack sets the rip to the calle location copies the callers saved registers to the stack to aviod corruption 
+ret ; clears the stack and resets the calle saved registers pushes the rip register back to the return address ; 
+
+...
+mov rax ,43 ; rax contaqins the return value  
+ret 
