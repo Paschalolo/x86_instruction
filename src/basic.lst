@@ -1,0 +1,6 @@
+; some basicv machine insstrctuions 
+
+mov destination_operand , source_operand 
+; imm<a mukltiple of 8> -> immedaite values used with opcode instructions 
+; reg<multiple of 8> -> registers containins 8 , 16 , 32 or 64 bits 
+; mem<multiple of 8> -> a mmemory location containing 8 , 16  , 32 or 64 bits 
