@@ -1,0 +1,7 @@
+; control instruction 
+jmp ,-> jXX <check the intel manuals>
+
+; carry instructions 
+mov eax, int32Var 
+add eax , anotheVar 
+jc overflowOccured ; this jusmps to the function handling overflow 
