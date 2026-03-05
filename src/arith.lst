@@ -1,0 +1,6 @@
+
+; Insturction involving aritmetic 
+; Note most of the instructions that perfrom arithmetic change some of the RFLAGS accesible in the user mode 
+
+and rax , rax 
+setpe al ; -> cheecking if the parity is even from the rax rax equaltion above
