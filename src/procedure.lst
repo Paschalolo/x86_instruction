@@ -1,0 +1,22 @@
+
+; Details on procedure calls 
+; call & ret 
+
+; You can use x86 push pop to rpeserve and save registers 
+; ALways be careful about modifying the stack poping and pushing return address or other vairable can lead to mostly segmentation faults or data corruption ;
+; Better for code to work well than to run fast and generate gibberish ; For perrfomance resons keep the stack aligned on 8 byte boundary
+
+
+; Local global vairables 
+
+; Example of stack manipulation 
+sub rsp , 12 
+mov eax , k <addres of a local vairable k >
+mov dword[rsp+8] , eax 
+mov eax , j
+mov dword[rsp+4] , eax 
+mov eax , i
+mov dword[rsp], eax 
+call CallProc
+add rsp , 12 
+
