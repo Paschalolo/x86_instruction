@@ -1,7 +1,12 @@
 ; Author : paschal Ahanmisi 
 
 ; Multplication of signed and unsigned numbers 
-%define ABC 0 
+%define ABC 0
+; PLaying with macros 
+%define integer dword 
+%define long_long qword
+%define short word 
+%deifne char byte 
 SECTION .text
 	global _start 
 
