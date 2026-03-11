@@ -1,0 +1,28 @@
+
+; set flags are setcc -> check intel instruction manual 
+
+
+; bool = a <= b 
+mov eax , a 
+mov ebx , b 
+cmp a , b 
+setle al <bool> ; bool is a byte vairable ; 
+; in inline assembly byte are "q"
+
+; test instruction -> it ands two registers or vairables it does no store tje result but change some RFLAGS 
+
+
+; Arithmetic expressions 
+; x = y * z;
+
+mov eax , y 
+imul eax , z 
+mov x , eax 
+
+; sub expressions 
+; w = w-y-z 
+mov eax , w 
+sub eax , dword[y] ; 
+sub eax , dword[z] ;
+mov dword[w] , eax 
+
