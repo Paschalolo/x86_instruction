@@ -1,3 +1,30 @@
 ; Author : paschal 
 
-; indirect branching from the switch statement 
+; indirect branching from the switch statement
+; Example below 
+
+
+: SWITCH Statement 
+
+	mov eax , dword[i] 
+	cmp eax ,5
+	jb EndCase 
+	cmp eax , 7 
+	ja EndCase 
+
+	lea rcx , JmpTbl 
+	jmp qword[rcx + rax *8]
+JmpTbl : 
+	dq Stmt5 , Stmt6 , Stmt7
+Stmt5:
+	// code here 
+	jmp EndCase ;
+Stmt6: 
+	// code here 
+	jmp EndCase ;
+Stmt7: 
+	// code here 
+	jmp EndCase ;
+EndCase : 
+	; end of stuff 
+	ret 
